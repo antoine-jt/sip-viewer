@@ -336,9 +336,9 @@ public class TextLogMessageParser {
 
       // -- destination
       case STATE_DESTINATION:
-        if (c == ' ')
+        if (c == ' ' && pDestination.length() == 0)
           continue;
-        else if (c == '\n' || c == '\r')
+        else if (c == ' ' || c == '\n' || c == '\r')
           break;
         else
           pDestination.append(c);
